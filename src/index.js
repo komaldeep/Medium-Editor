@@ -21,17 +21,15 @@ import configureStore from './components/store/index';
 const store = configureStore();
 
 // Pages of the project
-import App from './components/Scenes/app';
-import Posts from './components/Scenes/posts';
-import Post from './components/Scenes/post';
+import MediumEditor from './components/Scenes/Index';
+
 
 
 render(
     <MuiThemeProvider muiTheme={getMuiTheme()}>
         <Provider store={store}>
             <Router history={browserHistory}>
-                <Route path="/" component={App}>
-                    <Route path="post" component={Post} />
+                <Route path="/" component={MediumEditor}>
                 </Route>
             </Router>
         </Provider>

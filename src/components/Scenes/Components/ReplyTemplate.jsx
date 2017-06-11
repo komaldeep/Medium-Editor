@@ -2,8 +2,12 @@ import React, {Component} from "react";
 import {Link} from "react-router";
 import Editor from 'react-medium-editor';
 import RaisedButton from 'material-ui/RaisedButton';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { browserHistory } from 'react-router';
+import { all_replies } from './../../actions/postActions';
 
-export default class ReplyTemplate extends Component{
+class ReplyBox extends Component{
 
     constructor(props){
         super(props);
@@ -14,7 +18,7 @@ export default class ReplyTemplate extends Component{
     }
 
 
-    handleChange=(text, medium)=>{
+    handleChange=(text)=>{
         this.setState({text: text});
     }
 
@@ -24,9 +28,17 @@ export default class ReplyTemplate extends Component{
         })
     }
 
+    publishbutton=()=>{
+        this.props.all_replies(this.state.text);
+        // this.Editor.destroy();
+        this.setState({
+            text: ''
+        });
+    }
 
 
     render(){
+
         return(
             <div>
                 <div className="reply-header">
@@ -48,16 +60,12 @@ export default class ReplyTemplate extends Component{
                                 <span className="response"> Komaldeep Chahal </span> <br/>
 
                                 <Editor
-                                    style={{ outline: '0px',
-                                        marginLeft:'10px',
-                                        marginRight:'10px',
-                                        marginTop:'5px'}}
+                                    style={{ outline: '0px', marginLeft:'10px', marginRight:'10px', marginTop:'5px'}}
                                     text={this.state.text}
                                     onChange={this.handleChange}
-                                    options={{toolbar: {buttons: [
-                                        'bold',
-                                        'italic',
-                                        'underline',
+                                    options={{
+                                     placeholder: {text: "Write your response here"},
+                                        toolbar: {buttons: ['bold', 'italic', 'underline',
                                         {
                                             name: 'h2',
                                             action: 'append-h2',
@@ -81,11 +89,15 @@ export default class ReplyTemplate extends Component{
                                             placeholderText: 'Write or Paste link',
                                         }
                                     ],
-                                    }}}
+                                    }
+                                    }}
                                 />
+
+
+
                             </div>
                             <div className="reply-footer">
-                                <RaisedButton label="Publish" primary={true} />
+                                <RaisedButton onClick={this.publishbutton} label="Publish" primary={true} />
                             </div>
                         </div>
                     }
@@ -95,4 +107,23 @@ export default class ReplyTemplate extends Component{
         );
     }
 }
+
+
+function mapStateToProps(store) {
+    return { Reducers: store.Reducers};
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        all_replies
+    }, dispatch);
+}
+
+
+const ReplyTemplate = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ReplyBox)
+
+export default ReplyTemplate;
 

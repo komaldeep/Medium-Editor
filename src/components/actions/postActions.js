@@ -1,14 +1,16 @@
-import * as actionTypes from './actionTypes';
+import * as Actions from '../actions/postActions';
 
-const dummyPosts = [
-  { id: 1, name: 'post1' },
-  { id: 3, name: 'post2' },
-];
+let dummyreply = [];
 
-export function fetchPosts() {
-  return {
-    type: actionTypes.FETCH_POSTS,
-    payload: dummyPosts,
-  };
+export function all_replies(reply) {
+    console.log(reply,'reply');
+    dummyreply.push(reply)
+    return {
+        type:"REPLIES",
+        payload: {
+            dummyreply: dummyreply
+        }
+    };
 }
 
+export default Actions;

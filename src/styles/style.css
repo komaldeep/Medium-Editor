@@ -47,6 +47,5 @@ body {
 }
 
 .reply-footer{
-    display: flex;
-    align-content:flex-end;
+    padding-left: 10px;
 }

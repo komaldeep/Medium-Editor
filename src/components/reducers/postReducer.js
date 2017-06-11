@@ -1,9 +1,11 @@
-import * as actionTypes from '../../components/actions/actionTypes';
-
-export default function (state = [], action) {
+export default function Reducers(state={
+    replies:false
+}, action) {
   switch (action.type) {
-    case actionTypes.FETCH_POSTS:
-      return action.payload;
+      case "REPLIES":
+      {
+          return {...state, replies: action.payload}
+      }
     default:
       return state;
   }
