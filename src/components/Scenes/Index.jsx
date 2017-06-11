@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import {Link} from "react-router";
 import Header from './Widgets/Header';
 import ReplyTemplate from './Widgets/ReplyTemplate';
 import { connect } from 'react-redux';

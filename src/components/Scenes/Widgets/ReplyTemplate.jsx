@@ -4,7 +4,6 @@ import Editor from 'react-medium-editor';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { browserHistory } from 'react-router';
 import { all_replies } from './../../actions/postActions';
 
 class ReplyBox extends Component{
@@ -30,7 +29,6 @@ class ReplyBox extends Component{
 
     publishbutton=()=>{
         this.props.all_replies(this.state.text);
-        // this.Editor.destroy();
         this.setState({
             text: ''
         });
@@ -38,6 +36,8 @@ class ReplyBox extends Component{
 
 
     render(){
+
+        console.log(this.state.text,'text is');
 
         return(
             <div>
@@ -62,6 +62,7 @@ class ReplyBox extends Component{
                                 <Editor
                                     style={{ outline: '0px', marginLeft:'10px', marginRight:'10px', marginTop:'5px'}}
                                     text={this.state.text}
+                                    value={this.state.text}
                                     onChange={this.handleChange}
                                     options={{
                                      placeholder: {text: "Write your response here"},
