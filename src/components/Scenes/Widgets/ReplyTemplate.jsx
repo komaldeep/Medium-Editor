@@ -63,7 +63,7 @@ class ReplyBox extends Component{
                                     style={{ outline: '0px', marginLeft:'10px', marginRight:'10px', marginTop:'5px'}}
                                     text={this.state.text}
                                     value={this.state.text}
-                                    onChange={this.handleChange}
+                                    onChange={this.handleChange.bind(this)}
                                     options={{
                                      placeholder: {text: "Write your response here"},
                                         toolbar: {buttons: ['bold', 'italic', 'underline',
@@ -93,13 +93,12 @@ class ReplyBox extends Component{
                                     }
                                     }}
                                 />
-
-
-
                             </div>
+
                             <div className="reply-footer">
                                 <RaisedButton onClick={this.publishbutton} label="Publish" primary={true} />
                             </div>
+
                         </div>
                     }
 

@@ -9,35 +9,23 @@ import Blog from './Widgets/Blog';
 
 class Index extends Component{
 
-    constructor(props){
-        super(props);
-        this.state = {
-            text:'',
-        }
-    }
 
     render(){
 
-
-
         const {replies} = this.props.Reducers;
-        console.log(replies, 'replies')
         return(
             <div>
-                 <Header/>
+                  <Header/>
                   <Blog/>
 
                 {
-                    replies == false ?
-                        <ReplyTemplate/>
+                         replies == false ?
+                            <ReplyTemplate/>
                         :
-                        replies.dummyreply.map((details, i)=>{
-                            return (<Comments key={i} item={details}/>)
+                            replies.dummyreply.map((details, i)=>{
+                                 return (<Comments key={i} item={details}/>)
                         })
-
                 }
-
-
 
             </div>
         );
