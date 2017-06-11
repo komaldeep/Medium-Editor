@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #FAFAFA;
+}
+
+.nav-reply{
+    display: flex;
+    justify-content: center;
+}
+
+.reply-header{
+    padding-left: 10%;
+}
+
+.reply-sample{
+    height: 60px;
+    width: 80%;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FAFAFA;
+    display: block;
+}
+
+.reply-sample-template{
+    display: block;
+    width: 80%;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #FAFAFA;
+    min-height: 170px;
+}
