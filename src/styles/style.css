@@ -10,6 +10,16 @@ body {
     justify-content: center;
 }
 
+.nav-blog{
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 10px;
+    background-color: #ffffff;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: #000;
+}
+
 .reply-header{
     padding-left: 10%;
     margin-top: 20px;
@@ -31,7 +41,9 @@ body {
     display: block;
     padding-left: 20px;
     padding-top: 12px;
+    box-shadow:         1px 1px #ccc;
 }
+
 
 .reply-sample-template{
     display: block;
@@ -45,7 +57,20 @@ body {
     padding-left: 20px;
     padding-bottom: 20px;
 }
+.reply-sample-template-portion{
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    min-height: 170px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
 
 .reply-footer{
     padding-left: 10px;
+}
+
+.reply-text{
+    font-size: 18px;
 }

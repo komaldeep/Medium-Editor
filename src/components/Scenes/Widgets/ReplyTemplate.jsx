@@ -55,7 +55,7 @@ class ReplyBox extends Component{
 
                         :
                         <div className="reply-sample-template">
-                            <div className="reply-sample-template">
+                            <div className="reply-sample-template-portion">
                                 <img src={require('./../../../../Images/profile.png')}/>
                                 <span className="response"> Komaldeep Chahal </span> <br/>
 

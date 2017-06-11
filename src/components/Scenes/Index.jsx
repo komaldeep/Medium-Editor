@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {Link} from "react-router";
-import Header from './Components/Header';
-import ReplyTemplate from './Components/ReplyTemplate';
+import Header from './Widgets/Header';
+import ReplyTemplate from './Widgets/ReplyTemplate';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { browserHistory } from 'react-router';
-import Comments from './Components/Comments';
-import Blog from './Components/Blog';
+import Comments from './Widgets/Comments';
+import Blog from './Widgets/Blog';
 
 class Index extends Component{
 
