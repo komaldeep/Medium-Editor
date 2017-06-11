@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {Link} from "react-router";
 import Editor from 'react-medium-editor';
+//import my_image from 'https://github.com/komaldeep/Medium-Editor/blob/master/Images/profile.png'; //relative path to image
+{/*<img src={my_image} />*/}
 
 export default class ReplyTemplate extends Component{
 
@@ -42,7 +44,8 @@ export default class ReplyTemplate extends Component{
                     {this.state.showtemplate == false ?
                         <div onClick={this.replyonfocus.bind(this)}
                              className="reply-sample">
-                            <img src={require('./../../../../Images/profile.png')} />
+                            <img src={require('./../../../../Images/profile.png')}/>
+                            <span>Write your Response</span>
                         </div>
 
                         :
@@ -54,7 +57,8 @@ export default class ReplyTemplate extends Component{
                                 style={{ outline: '0px', marginLeft:'10px', marginRight:'10px' }}
                                 text={this.state.text}
                                 onChange={this.handleChange}
-                                options={{toolbar: {buttons: ['bold',
+                                options={{toolbar: {buttons: [
+                                    'bold',
                                     'italic',
                                     'underline',
                                     {

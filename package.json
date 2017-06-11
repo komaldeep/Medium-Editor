@@ -54,6 +54,7 @@
     "redux-logger": "2.8.1",
     "sinon": "1.17.7",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.8",
     "webpack": "1.12.9",
     "webpack-dev-server": "1.14.0",
     "webpack-hot-middleware": "2.12.1"

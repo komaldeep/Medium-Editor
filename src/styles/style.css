@@ -22,6 +22,8 @@ body {
     border-width: 1px;
     border-color: #FAFAFA;
     display: block;
+    padding-left: 20px;
+    padding-top: 12px;
 }
 
 .reply-sample-template{
