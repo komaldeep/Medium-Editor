@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router";
 import Editor from 'react-medium-editor';
-//import my_image from 'https://github.com/komaldeep/Medium-Editor/blob/master/Images/profile.png'; //relative path to image
-{/*<img src={my_image} />*/}
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default class ReplyTemplate extends Component{
 
@@ -25,12 +24,6 @@ export default class ReplyTemplate extends Component{
         })
     }
 
-    onReplyblur=() => {
-        this.setState({
-            showtemplate:false
-        })
-    }
-
 
 
     render(){
@@ -42,50 +35,58 @@ export default class ReplyTemplate extends Component{
                 <div className="nav-reply">
 
                     {this.state.showtemplate == false ?
-                        <div onClick={this.replyonfocus.bind(this)}
+                        <div onClick={this.replyonfocus}
                              className="reply-sample">
                             <img src={require('./../../../../Images/profile.png')}/>
-                            <span>Write your Response</span>
+                            <span className="response">Write your Response</span>
                         </div>
 
                         :
-                        <div className="reply-sample-template"
-                             onBlur={this.onReplyblur.bind(this)}
-                        >
+                        <div className="reply-sample-template">
+                            <div className="reply-sample-template">
+                                <img src={require('./../../../../Images/profile.png')}/>
+                                <span className="response"> Komaldeep Chahal </span> <br/>
 
-                            <Editor
-                                style={{ outline: '0px', marginLeft:'10px', marginRight:'10px' }}
-                                text={this.state.text}
-                                onChange={this.handleChange}
-                                options={{toolbar: {buttons: [
-                                    'bold',
-                                    'italic',
-                                    'underline',
-                                    {
-                                        name: 'h2',
-                                        action: 'append-h2',
-                                        aria: 'header type 1',
-                                        tagNames: ['h2'],
-                                        contentDefault: '<H4>T</H4>',
-                                        classList: ['custom-class-h1'],
-                                    },
-                                    {
-                                        name: 'h3',
-                                        action: 'append-h3',
-                                        aria: 'header type 1',
-                                        tagNames: ['h3'],
-                                        contentDefault: '<H5>T</H5>',
-                                    },
-                                    {
-                                        name:"anchor",
-                                        customClassOption: null,
-                                        customClassOptionText: 'Button',
-                                        linkValidation: true,
-                                        placeholderText: 'Write or Paste link',
-                                    }
-                                ],
-                                }}}
-                            />
+                                <Editor
+                                    style={{ outline: '0px',
+                                        marginLeft:'10px',
+                                        marginRight:'10px',
+                                        marginTop:'5px'}}
+                                    text={this.state.text}
+                                    onChange={this.handleChange}
+                                    options={{toolbar: {buttons: [
+                                        'bold',
+                                        'italic',
+                                        'underline',
+                                        {
+                                            name: 'h2',
+                                            action: 'append-h2',
+                                            aria: 'header type 1',
+                                            tagNames: ['h2'],
+                                            contentDefault: '<H4>T</H4>',
+                                            classList: ['custom-class-h1'],
+                                        },
+                                        {
+                                            name: 'h3',
+                                            action: 'append-h3',
+                                            aria: 'header type 1',
+                                            tagNames: ['h3'],
+                                            contentDefault: '<H5>T</H5>',
+                                        },
+                                        {
+                                            name:"anchor",
+                                            customClassOption: null,
+                                            customClassOptionText: 'Button',
+                                            linkValidation: true,
+                                            placeholderText: 'Write or Paste link',
+                                        }
+                                    ],
+                                    }}}
+                                />
+                            </div>
+                            <div className="reply-footer">
+                                <RaisedButton label="Publish" primary={true} />
+                            </div>
                         </div>
                     }
 

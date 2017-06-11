@@ -12,7 +12,14 @@ body {
 
 .reply-header{
     padding-left: 10%;
+    margin-top: 20px;
 }
+
+.response{
+    padding-left: 10px;
+    color: #00BCD4;
+}
+
 
 .reply-sample{
     height: 60px;
@@ -34,4 +41,12 @@ body {
     border-width: 1px;
     border-color: #FAFAFA;
     min-height: 170px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.reply-footer{
+    display: flex;
+    align-content:flex-end;
 }
