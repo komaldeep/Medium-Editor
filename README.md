@@ -9,3 +9,7 @@ Steps to run the project
 Then go and see the magic at http://localhost:3000/
 
 React Editor lloks like this
+
+![alt text](https://github.com/komaldeep/Medium-Editor/blob/master/react.png)
+
+Developer- Komaldeep Singh
