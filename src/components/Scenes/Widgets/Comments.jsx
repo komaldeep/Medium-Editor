@@ -15,7 +15,7 @@ export default class Comments extends Component{
                         <span className="response"> Komaldeep Chahal </span> <br/>
 
                         <div className="reply-text"
-                            dangerouslySetInnerHTML={{ __html: this.props.item}}
+                             dangerouslySetInnerHTML={{ __html: this.props.item}}
                         />
 
                     </div>

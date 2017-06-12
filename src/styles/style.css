@@ -73,4 +73,6 @@ body {
 
 .reply-text{
     font-size: 18px;
+    width: 100%;
+    /*background-color: red;*/
 }
